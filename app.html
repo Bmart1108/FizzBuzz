@@ -2,7 +2,7 @@
 <html lang="en" class="h-100">
 
 <head>
-    <title>App NAME: JAvascript Project</title>
+    <title>FizzBuzz: A Coding Challenge</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -27,7 +27,7 @@
             <a class="navbar-brand" href="app.html">
 
                 <img src="img/MspectreMark.svg" height="24" class="d-inline-block align-text-top">
-                APP NAME
+                FizzBuzz
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
                 aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -53,12 +53,49 @@
         </div>
     </nav>
     <main class="flex-shrink-0">
-        <div class="container mt-5">
-            <div>
-                <h1>APP UI WILL GO HERE</h1>
-                <input id="message" placeholder="Enter a Message">
-                <div class="p-2">
-                    <button id="btnSubmit" class="btn btn-primary">Display Message</button>
+        <div class="container mt-3">
+            <div class="row">
+                <div class="col">
+                    <h1>FizzBuzz: A Coding Challenge</h1>
+                    <h5 class="lead">FizzBuzz. A javascript app that displays numbers from 0 to 100. For
+                        multiples of three, it will print <span class="fw-bolder">"Fizz"</span> of a number. For multiples of five, it will
+                        print <span class= "fw-bolder">"Buzz"</span> For numbers with both multiples, it will print <span class= "fw-bolder">"FizzBuzz."</span></h5>
+                    <h2 class="mt-3 border-bottom border-3 border-dark">Instructions</h2>
+                    <p>Enter a starting value amd a endiong value. Press the button and the values will appear.</p>
+                </div>
+
+                <div class="col">
+                    <div>
+                        <h5>Enter Values</h5>
+                        <form class="row">
+                            <div class="col py-2">
+                                <label for="startValue" class="form-label">Enter a Number</label>
+                                <input id="startValue" name="startValue" type="number" class="form-control"
+                                    placeholder="Start Value" value=0 aria-label="Start Value">
+                            </div>
+                            <div class="col py-2">
+                                <label for="endValue" class="form-label">Enter another Number</label>
+                                <input id="endValue" name="endValue" type="number" class="form-control"
+                                    placeholder="EndValue" value=100 aria-label="End Value">
+                            </div>
+                            <div class="col-12 d-flex justify-content-start justify-content-lg-end">
+                                <button id="btnSubmit" type="button" class=" btn btn-primary ">Buzz It!
+                                  </button>
+                            </div>
+                        </form>
+                        <h2 class="mt-5 border-bottom border-3 border-dark">Results</h2>
+                        <div class="table-responsive">
+                            <table class="table table-hover table-striped table-sm">
+                                <tbody id="results">
+
+
+
+                                    <!---Content Goes Here---->
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -105,7 +142,7 @@
     <!---Custom Javascript---->
     <script src="js/site.js"></script>
     <script>
-        document.getElementById("btnSubmit").addEventListener("click", getMessage);
+        document.getElementById("btnSubmit").addEventListener("click", getValues2);
     </script>
 </body>
 

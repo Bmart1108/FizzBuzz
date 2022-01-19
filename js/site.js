@@ -1,5 +1,3 @@
-
-
 function getValues() {
     let fizzValue = document.getElementById("fizzValue").value;
     let buzzValue = document.getElementById("buzzValue").value;
@@ -23,8 +21,8 @@ function getValues() {
             text: "Only integers are allowed for FizzBuzz"
         })
     }
-}
 
+}
 //generate an array of values
 
 function generateData(fizzValue, buzzValue, ) {

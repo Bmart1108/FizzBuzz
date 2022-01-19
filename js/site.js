@@ -1,86 +1,69 @@
-// display a message to the user
+
+
 function getValues() {
-    alert("Hello App");
-}
-
-function getValues2() {
-    let startValue = document.getElementById("startValue").value;
-    let endValue = document.getElementById("endValue").value;
+    let fizzValue = document.getElementById("fizzValue").value;
+    let buzzValue = document.getElementById("buzzValue").value;
 
 
-    startValue = parseInt(startValue);
-    endValue = parseInt(endValue);
+    fizzValue = parseInt(fizzValue);
+    buzzValue = parseInt(buzzValue);
 
 
     //check to see if they are in fact integers
-    if (Number.isInteger(startValue) && Number.isInteger(endValue)) {
+    if (Number.isInteger(fizzValue) && Number.isInteger(buzzValue)) {
 
-        //generate a list of numbers
-        let numbers = generateNumbers(startValue, endValue)
-
-
-
-        //display a list of numbers
-        displayNumbers(numbers);
-
+        //generate a list of data
+        let fbData = generateData(fizzValue, buzzValue);
+        displayData(fbData);
 
     } else {
         Swal.fire({
-            icon: "error",
+            icon: "Error",
             title: "Oops...",
             text: "Only integers are allowed for FizzBuzz"
         })
     }
 }
 
+//generate an array of values
 
-function generateNumbers(start, end, ) {
+function generateData(fizzValue, buzzValue, ) {
+    let returnArray = [];
+    let isFizz = false;
+    let isBuzz = false;
+    for (let index = 1; index <= 100; index++) {
 
-    let numbers = [];
-    for (let index = start; index <= end; index++) {
-        numbers.push(index);
+        isFizz = (index % fizzValue == 0);
+        isBuzz = (index % buzzValue == 0);
+        if (isFizz && isBuzz) {
+            returnArray.push('FizzBuzz');
+        } else if (isFizz) {
+            returnArray.push('Fizz');
+        } else if (isBuzz) {
+            returnArray.push('Buzz');
+        } else {
+            returnArray.push(index);
+        }
     }
-
-    return numbers;
-
-
-
-    /*
-   pos=  0,1,2,3,4,5,6,7,8 
-        [1,2,3,4,5,6,7,8,9]
-*/
-
+    return returnArray;
 }
 
+//Dispay the values to the page
 
-function displayNumbers(numbers) {
-    let templateRows = "";
+function displayData(fbData) {
+    let contentDiv = document.getElementById("results");
+    let content = "";
 
-    for (let index = 1; index < numbers.length; index++) {
+    //Clear previous data
+    contentDiv.innerHTML = "";
 
-        let number = numbers[index];
-
-        let result = "";
-
-        if (number % 15 == 0) {
-            result = "fizzbuzz";
-
-        } else if (number % 5 == 0) {
-            result = "buzz";
-
-        } else if (number % 3 == 0) {
-            result = "fizz"
-
-        } else {
-            result = number;
-        }
-
-        let row = `<tr><td class="${result}">${result}</td></tr>`;
-
-        templateRows += row;
-
+    for (let index = 0; index < fbData.length; index++) {
+        let dataValue = fbData[index];
+        let dataElement = `<div class="col ${dataValue}">${dataValue}</div>`;
+        content += dataElement;
     }
 
-    document.getElementById("results").innerHTML = templateRows;
+    ///write the results to the page
+    contentDiv.innerHTML = content;
 
 }

@@ -1,5 +1,5 @@
 function getValues() {
-    let fizzValue = document.getElementById("fizzValue").value;
+    let fizzValue= document.getElementById("fizzValue").value;
     let buzzValue = document.getElementById("buzzValue").value;
 
 

@@ -11,7 +11,7 @@ function getValues() {
     if (Number.isInteger(fizzValue) && Number.isInteger(buzzValue)) {
 
         //generate a list of data
-        let fbData = generateData(fizzValue, buzzValue);
+        let fbData = generateNumbers(fizzValue, buzzValue);
         displayData(fbData);
 
     } else {
@@ -25,7 +25,7 @@ function getValues() {
 }
 //generate an array of values
 
-function generateData(fizzValue, buzzValue, ) {
+function generateNumbers(fizzValue, buzzValue, ) {
     let returnArray = [];
     let isFizz = false;
     let isBuzz = false;
@@ -34,11 +34,11 @@ function generateData(fizzValue, buzzValue, ) {
         isFizz = (index % fizzValue == 0);
         isBuzz = (index % buzzValue == 0);
         if (isFizz && isBuzz) {
-            returnArray.push('FizzBuzz');
+            returnArray.push("fizzBuzz");
         } else if (isFizz) {
-            returnArray.push('Fizz');
+            returnArray.push("buzz");
         } else if (isBuzz) {
-            returnArray.push('Buzz');
+            returnArray.push("fizz");
         } else {
             returnArray.push(index);
         }
@@ -57,7 +57,7 @@ function displayData(fbData) {
 
     for (let index = 0; index < fbData.length; index++) {
         let dataValue = fbData[index];
-        let dataElement = `<div class="col ${dataValue}">${dataValue}</div>`;
+        let dataElement = `<div class= "col ${dataValue}">${dataValue}</div>`;
         content += dataElement;
     }
 

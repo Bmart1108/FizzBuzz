@@ -5,17 +5,17 @@
     --bm-secondary-color: #ff993b;
 }
 
-.Fizz{
+.fizz{
     color: #ff4500;
     font-weight: bold;
 }
 
-.Buzz{
+.buzz{
     color: #0b52d6;
     font-weight: bold;
 }
 
-.Fizzbuzz{
+.fizzbuzz{
     color: #800080;
     font-weight: bold;
 }

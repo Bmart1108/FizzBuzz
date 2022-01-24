@@ -25,7 +25,7 @@ function getValues() {
 }
 //generate an array of values
 
-function generateNumbers(fizzValue, buzzValue, ) {
+function generateNumbers(fizzValue, buzzValue ) {
     let returnArray = [];
     let isFizz = false;
     let isBuzz = false;

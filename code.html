@@ -67,28 +67,60 @@
             <div class="row">
                 <div class="col-12 col-lg-8">
                     <pre class="line-numbers"><code class="language-js">
-// display a message to the user
-function getMessage(){
+function getValues() {
+let fizzValue= document.getElementById("fizzValue").value;
+let buzzValue = document.getElementById("buzzValue").value;
 
-let userMessage = document.getElementById("message").value;
 
+fizzValue = parseInt(fizzValue);
+buzzValue = parseInt(buzzValue);
+
+
+//check to see if they are in fact integers
+if (Number.isInteger(fizzValue) && Number.isInteger(buzzValue)) {
+
+//generate a list of data
+let fbData = generateNumbers(fizzValue, buzzValue);
+displayData(fbData);
+
+} else {
 Swal.fire({
-position: 'top-end',
-icon: 'success',
-title: 'Your work has been saved',
-showConfirmButton: false,
-timer: 1500
+icon: "Error",
+title: "Oops...",
+text: "Only integers are allowed for FizzBuzz"
 })
-console.log(userMessage);
-}; 
+}
+
+}
+//generate an array of values
+
+function generateNumbers(fizzValue, buzzValue ) {
+let returnArray = [];
+let isFizz = false;
+let isBuzz = false;
+for (let index = 1; index <= 100; index++) { isFizz=(index % fizzValue==0); isBuzz=(index % buzzValue==0); if (isFizz &&
+    isBuzz) { returnArray.push("fizzBuzz"); } else if (isFizz) { returnArray.push("fizz"); } else if (isBuzz) {
+    returnArray.push("buzz"); } else { returnArray.push(index); } } return returnArray; } //Dispay the values to the
+    page function displayData(fbData) { let contentDiv=document.getElementById("results"); let content="" ; //Clear
+    previous data contentDiv.innerHTML="" ; for (let index=0; index < fbData.length; index++) { let
+    dataValue=fbData[index]; let dataElement=`<div class="col ${dataValue}">${dataValue}</div>`;
+    content += dataElement;
+    }
+
+    ///write the results to the page
+    contentDiv.innerHTML = content;
+
+    }
                     </code>
                     </pre>
                 </div>
                 <div class="col-12 col-lg-4">
-                    <p>The code is structured in one function. It accesses the unser's input and displays a SweetAlert
-                        window.</p>
-                    <h5>getMessage</h5>
-                    <p>Prints the user's inputted message.</p>
+                    <p class="lead">The code is structured in two functions. It accesses the user's input and displays the response in the window based on the numbers entered
+                        .</p>
+                    <h5>getValues</h5>
+                    <p>Gathers the user's inputted numbers.</p>
+                    <h5>generateNumbers</h5>
+                    <p>Generates and displays the numbers based on their values in the table.</p>
                 </div>
             </div>
         </div>

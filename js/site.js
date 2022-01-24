@@ -36,9 +36,9 @@ function generateNumbers(fizzValue, buzzValue, ) {
         if (isFizz && isBuzz) {
             returnArray.push("fizzBuzz");
         } else if (isFizz) {
-            returnArray.push("buzz");
-        } else if (isBuzz) {
             returnArray.push("fizz");
+        } else if (isBuzz) {
+            returnArray.push("buzz");
         } else {
             returnArray.push(index);
         }

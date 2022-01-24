@@ -16,7 +16,7 @@
 }
 
 .fizzbuzz{
-    color: #800080;
+    color: #daf10b;
     font-weight: bold;
 }
 
@@ -29,7 +29,7 @@ main>.container {
 
 /*-----NAVBAR STYLES---*/
 .navbarBG {
-    background-color: var(--bm-dark-color);
+    background-color: lightcoral
 }
 
 
@@ -67,14 +67,15 @@ main>.container {
 .btn-outline-primary:active,
 .btn-outline-primary:focus{
     border-color: var(--bm-primary-color) !important;
-    background-color: var(--bm-secondary-color);
+    background-color: lightcoral;
  }
 
 
 .btn-primary{
     color: white !important;
-    background-color: var(--bm-secondary-color) !important;
-    border-color: var(--bm-secondary-color);
+    background-color: lightcoral!important;
+    border-color: black;
+    font-weight: bold;
 }
 
 .btn-primary:hover,
@@ -82,14 +83,14 @@ main>.container {
 .btn-primary:visited,
 .btn-primary:focus{
     filter: brightness(1.1) !important;
-    border-color: var(--bm-secondary-color);
+    border-color: black;
 }
 
 
 
 /*----FOOTER STYLES----*/
 .footer{
-    background-color: var(--bm-dark-color);
+    background-color: lightcoral;
     padding-right: 1rem;
     color: var(--bm-light-color);
 
@@ -102,12 +103,12 @@ main>.container {
 }
 
 footer .social>a{
-    color: var(--bm-light-color);
+    color: black;
     opacity: .75;
 
 }
 
 footer .social>a:hover{
-    color:var(--bm-secondary-color);
+    color: red;
     opacity: .90;
 }
